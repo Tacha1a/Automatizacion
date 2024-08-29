@@ -12,4 +12,14 @@ export class LoginViajes {
         console.error('E. Viajes: No se logró exitosamente la prueba de humo.');
       }
   }
+
+
+  async loginBCP() {
+    await this.page.goto('https://seguro-viaje.pacifico.com.pe/bcp');
+   try {
+      await this.page.waitForSelector('//*[@id="initialSection"]/div[1]/div/div/div[2]"]', { timeout: 1000 });
+    } catch (error) {
+      console.error('E. Viajes BCP: No se logró exitosamente la prueba de humo.');
+    }
+  }
 }
