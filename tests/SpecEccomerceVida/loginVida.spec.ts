@@ -2,13 +2,13 @@ import { test, expect } from '@playwright/test';
 import { LoginVida } from '../methods/EccomerceVida/loginVida'; // ruta
 
 test.describe('Login Tests', () => {
-  let loginViajes: LoginVida;
+  let loginVida: LoginVida;
 
   test.beforeEach(async ({ page }) => {
     LoginVida = new LoginVida(page);
   });
 
-  test('Login Viajes Produccion', async ({ page }) => {
+  test('Login Vida Produccion', async ({ page }) => {
     await LoginVida.login();
     await page.waitForTimeout(2000);
   });
@@ -17,19 +17,39 @@ test.describe('Login Tests', () => {
 import { LoginVida } from '../methods/EccomerceVida/loginVida'; // ruta
 
 test.describe('Login Tests', () => {
-  let loginViajes: LoginVida;
+  let loginVida: LoginVida;
 
   test.beforeEach(async ({ page }) => {
-    loginViajes = new LoginVida(page);
+    loginVida = new LoginVida(page);
   });
 
-  test('Login Viajes Produccion', async ({ page }) => {
-    await loginViajes.loginVidaBCP();
+  test('Login Vida Produccion', async ({ page }) => {
+    await loginVida.loginVidaBCP();
     await page.waitForTimeout(2000);
   });
 
-  test('Login Viajes BCP', async ({ page }) => {
-    await loginViajes.loginVidaPromocionesBCP();
+  test('Login Vida BCP', async ({ page }) => {
+    await loginVida.loginVidaPromocionesBCP();
+    await page.waitForTimeout(2000);
+  });
+
+  test('Login Vida Produccion', async ({ page }) => {
+    await loginVida.loginVidaCallBCP();
+    await page.waitForTimeout(2000);
+  });
+
+  test('Login Vida BCP', async ({ page }) => {
+    await loginVida.loginVidaCall();
+    await page.waitForTimeout(2000);
+  });
+
+  test('Login Vida Produccion', async ({ page }) => {
+    await loginVida.loginVida();
+    await page.waitForTimeout(2000);
+  });
+
+  test('Login Vida BCP', async ({ page }) => {
+    await LoginVida.loginVidaMasivo();
     await page.waitForTimeout(2000);
   });
 
