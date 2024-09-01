@@ -13,8 +13,7 @@ test.describe('Login Tests', () => {
     await page.waitForTimeout(2000);
   });
 
-  import { test, expect } from '@playwright/test';
-import { loginAutos } from '../methods/EccomerceAutos/loginAutos'; // ruta
+
 
 test.describe('Login Tests', () => {
   let loginAutos: loginAutos;

@@ -5,21 +5,6 @@ test.describe('Login Tests', () => {
   let loginVida: LoginVida;
 
   test.beforeEach(async ({ page }) => {
-    LoginVida = new LoginVida(page);
-  });
-
-  test('Login Vida Produccion', async ({ page }) => {
-    await LoginVida.login();
-    await page.waitForTimeout(2000);
-  });
-
-  import { test, expect } from '@playwright/test';
-import { LoginVida } from '../methods/EccomerceVida/loginVida'; // ruta
-
-test.describe('Login Tests', () => {
-  let loginVida: LoginVida;
-
-  test.beforeEach(async ({ page }) => {
     loginVida = new LoginVida(page);
   });
 
@@ -49,7 +34,7 @@ test.describe('Login Tests', () => {
   });
 
   test('Login Vida BCP', async ({ page }) => {
-    await LoginVida.loginVidaMasivo();
+    await loginVida.loginVidaMasivo();
     await page.waitForTimeout(2000);
   });
 
